@@ -1285,7 +1285,7 @@ return (
 <NavLink
 to={path}
 key={id}
-onClick={toggleSidebar}
+onClick={toggle}
 className={({ isActive }) =>
 isActive ? 'nav-link active' : 'nav-link'}
 

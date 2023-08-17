@@ -1,6 +1,6 @@
-import Dashboard from './Dashboard'
 import Error from './Error'
 import Landing from './Landing'
+import ProtectedRoutes from './ProtectedRoutes'
 import Register from './Register'
 
-export { Landing, Error, Register, Dashboard }
+export { Landing, Error, Register, ProtectedRoutes }
