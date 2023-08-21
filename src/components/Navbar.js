@@ -18,8 +18,8 @@ const Navbar = () => {
           <FaAlignLeft />
         </button>
         <div>
+          JOBLANE
           <Logo />
-
           <h3 className='logo-text'>dashboard</h3>
         </div>
         <div className='btn-container'>
@@ -37,7 +37,7 @@ const Navbar = () => {
               className='dropdown-btn'
               type='button'
               onClick={() => {
-                dispatch(logoutUser())
+                dispatch(logoutUser(`Logging out.. See you soon. ${user.name}`))
                 setShowLogout(!showLogout)
               }}
             >
