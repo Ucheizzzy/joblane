@@ -6,6 +6,7 @@ import { toast } from 'react-toastify'
 import {
   clearValues,
   createJob,
+  editJob,
   handleChange,
 } from '../../features/job/jobSlice'
 import { useEffect } from 'react'
@@ -24,6 +25,7 @@ const AddJob = () => {
     status,
     statusOptions,
     isEditing,
+    editJobId,
   } = useSelector((store) => store.job)
 
   const { user } = useSelector((store) => store.user)
@@ -43,6 +45,22 @@ const AddJob = () => {
     e.preventDefault()
     if (!position || !company || !jobLocation) {
       toast.error('Please Fill Out All Fields')
+      return
+    }
+    if (isEditing) {
+      dispatch(
+        editJob({
+          jobId: editJobId,
+          job: {
+            status,
+            position,
+            company,
+            jobLocation,
+            jobType,
+          },
+        })
+      )
+      navigate('/all-jobs')
       return
     }
     dispatch(createJob({ position, company, jobLocation, jobType, status }))

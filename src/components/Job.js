@@ -36,7 +36,7 @@ const Job = ({
           <div className='actions'>
             <Link
               to='/add-job'
-              className='btn-edit-btn'
+              className='btn edit-btn'
               onClick={() =>
                 dispatch(
                   setEditJob({
