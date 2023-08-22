@@ -9,7 +9,9 @@ import {
   handleChange,
 } from '../../features/job/jobSlice'
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 const AddJob = () => {
+  const navigate = useNavigate()
   // const[position, company, jobLocation, jobType] = userState()
   const dispatch = useDispatch()
   const {
@@ -44,6 +46,7 @@ const AddJob = () => {
       return
     }
     dispatch(createJob({ position, company, jobLocation, jobType, status }))
+    navigate('/all-jobs')
   }
   return (
     <Wrapper>

@@ -6,7 +6,7 @@ const Landing = () => {
   return (
     <Wrapper>
       <nav>
-        JOBLANE
+        <h3 style={{ marginRight: '5px' }}>JOBLANE</h3>
         <Logo />
       </nav>
       <div className='container page'>

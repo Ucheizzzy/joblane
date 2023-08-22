@@ -22,7 +22,7 @@ const Wrapper = styled.article`
     height: 60px;
     display: grid;
     place-items: center;
-    background: var(--primary-500);
+    background: #fc7a1e;
     border-radius: var(--borderRadius);
     font-size: 1.5rem;
     font-weight: 700;
@@ -101,6 +101,6 @@ const Wrapper = styled.article`
   &:hover .actions {
     visibility: visible;
   }
-`;
+`
 
 export default Wrapper;
