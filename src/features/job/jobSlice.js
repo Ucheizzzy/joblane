@@ -1,9 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { toast } from 'react-toastify'
-import { createJobThunk } from './jobThunk'
+import { createJobThunk, deleteJobThunk, editJobThunk } from './jobThunk'
 import { getUserFromLocalStorage } from '../../utils/localStorage'
-import customFetch from '../../utils/axios'
-import { getAllJobs, hideLoading, showLoading } from '../allJobs/allJobsSlice'
 
 const initialState = {
   isLoading: false,
@@ -18,47 +16,11 @@ const initialState = {
   editJobId: '',
 }
 
-export const createJob = createAsyncThunk(
-  'job/createJob',
-  async (job, thunkAPI) => {
-    return createJobThunk('/jobs', job, thunkAPI)
-  }
-)
+export const createJob = createAsyncThunk('job/createJob', createJobThunk)
 
-export const deleteJob = createAsyncThunk(
-  'job/deleteJob',
-  async (jobId, thunkAPI) => {
-    thunkAPI.dispatch(showLoading())
-    try {
-      const resp = await customFetch.delete(`/jobs/${jobId}`, {
-        headers: {
-          authorization: `Bearer ${thunkAPI.getState().user.user.token}`,
-        },
-      })
-      thunkAPI.dispatch(getAllJobs())
-      return resp.data.msg
-    } catch (error) {
-      thunkAPI.dispatch(hideLoading())
-      return thunkAPI.rejectWithValue(error.response.data.msg)
-    }
-  }
-)
-export const editJob = createAsyncThunk(
-  'job/editJob',
-  async ({ jobId, job }, thunkAPI) => {
-    try {
-      const { data } = await customFetch.patch(`/jobs/${jobId}`, job, {
-        headers: {
-          authorization: `Bearer ${thunkAPI.getState().user.user.token}`,
-        },
-      })
-      thunkAPI.dispatch(clearValues())
-      return data
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.data.msg)
-    }
-  }
-)
+export const deleteJob = createAsyncThunk('job/deleteJob', deleteJobThunk)
+
+export const editJob = createAsyncThunk('job/editJob', editJobThunk)
 
 const jobSlice = createSlice({
   name: 'job',

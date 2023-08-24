@@ -44,7 +44,7 @@ const Register = () => {
     dispatch(registerUser({ name, email, password }))
   }
 
-  const toggleMemeber = () => {
+  const toggleMember = () => {
     setValues({ ...values, isMember: !values.isMember })
   }
   return (
@@ -85,9 +85,9 @@ const Register = () => {
         </button>
 
         <p>
-          {values.isMember ? 'Not a memeber yet?' : 'Already a memeber'}
-          <button className='member-btn' type='button' onClick={toggleMemeber}>
-            {values.isMember ? 'Regster' : 'Login'}
+          {values.isMember ? 'Not a member yet?' : 'Already a member'}
+          <button className='member-btn' type='button' onClick={toggleMember}>
+            {values.isMember ? 'Register' : 'Login'}
           </button>
         </p>
       </form>

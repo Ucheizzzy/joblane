@@ -9,6 +9,9 @@ import JobsContainer from './JobsContainer'
 import Job from './Job'
 import Loading from './Loading'
 import JobInfo from './JobInfo'
+import StatsContainer from './StatsContainer'
+import ChartsContainer from './ChartsContainer'
+import StatItem from './StatItem'
 export {
   Logo,
   FormRow,
@@ -21,4 +24,7 @@ export {
   Job,
   Loading,
   JobInfo,
+  StatsContainer,
+  ChartsContainer,
+  StatItem,
 }
