@@ -8,8 +8,15 @@ const Landing = () => {
   return (
     <Wrapper>
       <nav>
-        <h3 style={{ marginRight: '5px' }}>JOBLANE</h3>
-        <Logo />
+        <h3
+          style={{
+            marginRight: '5px',
+            fontWeight: 'bolder',
+            letterSpacing: '0.25rem',
+          }}
+        >
+          JOBLANE
+        </h3>
       </nav>
       <div className='container page'>
         <div className='info'>

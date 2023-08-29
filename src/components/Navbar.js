@@ -18,8 +18,16 @@ const Navbar = () => {
           <FaAlignLeft />
         </button>
         <div>
-          <h3>JOBLANE</h3>
-          <Logo />
+          <h3
+            className='logo-text'
+            style={{
+              marginRight: '5px',
+              fontWeight: 'bolder',
+              letterSpacing: '0.25rem',
+            }}
+          >
+            JOBLANE
+          </h3>
           <h3 className='logo-text'>dashboard</h3>
         </div>
         <div className='btn-container'>

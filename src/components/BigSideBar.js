@@ -17,7 +17,15 @@ const BigSideBar = () => {
         <div className='content'>
           <header>
             <Link to='landing'>
-              <Logo />
+              <h3
+                style={{
+                  marginRight: '5px',
+                  fontWeight: 'bolder',
+                  letterSpacing: '0.25rem',
+                }}
+              >
+                JOBLANE
+              </h3>
             </Link>
           </header>
           <NavLinks />

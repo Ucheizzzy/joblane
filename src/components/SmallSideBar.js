@@ -24,7 +24,15 @@ const SmallSideBar = () => {
             <FaTimes />
           </button>
           <header>
-            <Logo />
+            <h3
+              style={{
+                marginRight: '5px',
+                fontWeight: 'bolder',
+                letterSpacing: '0.25rem',
+              }}
+            >
+              JOBLANE
+            </h3>
           </header>
           <NavLinks toggleSideBar={toggle} />
         </div>
