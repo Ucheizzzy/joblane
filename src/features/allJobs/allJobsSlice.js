@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { toast } from 'react-toastify'
 import { getAllJobsThunk } from './allJobsThunk'
 import customFetch from '../../utils/axios'
+import { logoutUser } from '../user/userSlice'
 const initialFilterState = {
   search: '',
   searchStatus: 'all',
@@ -37,6 +38,10 @@ export const showStats = createAsyncThunk(
       // console.log(data)
       return data
     } catch (error) {
+      if (error.response.status === 401) {
+        thunkAPI.dispatch(logoutUser())
+        return thunkAPI.rejectWithValue('Unauthorized! Logging Out...')
+      }
       return thunkAPI.rejectWithValue(error.response.data.msg)
     }
   }

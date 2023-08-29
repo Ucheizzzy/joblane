@@ -12,6 +12,7 @@ import JobInfo from './JobInfo'
 import StatsContainer from './StatsContainer'
 import ChartsContainer from './ChartsContainer'
 import StatItem from './StatItem'
+import PageBtnContainer from './PageBtnContainer'
 export {
   Logo,
   FormRow,
@@ -27,4 +28,5 @@ export {
   StatsContainer,
   ChartsContainer,
   StatItem,
+  PageBtnContainer,
 }
