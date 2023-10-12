@@ -7,11 +7,7 @@ export const updateUserThunk = async (url, user, thunkAPI) => {
   try {
     //in this thunkAPI we have access to dispatch to actions, also to getAState to get the initial states states and also rejectwithBalue for errors
     // console.log(thunkAPI)
-    const resp = await customFetch.patch(url, user, {
-      headers: {
-        authorization: `Bearer ${thunkAPI.getState().user.user.token}`,
-      },
-    })
+    const resp = await customFetch.patch(url, user)
     return resp.data
     // console.log(thunkAPI.getState().user.user.token)
   } catch (error) {

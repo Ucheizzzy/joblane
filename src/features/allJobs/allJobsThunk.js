@@ -8,11 +8,7 @@ export const getAllJobsThunk = async (_, thunkAPI) => {
     url = url + `&search=${search}`
   }
   try {
-    const resp = await customFetch.get(url, {
-      headers: {
-        authorization: `Bearer ${thunkAPI.getState().user.user.token}`,
-      },
-    })
+    const resp = await customFetch.get(url)
     return resp.data
   } catch (error) {
     if (error.response.status === 401) {
@@ -25,11 +21,7 @@ export const getAllJobsThunk = async (_, thunkAPI) => {
 
 export const showStatsThunk = async (_, thunkAPI) => {
   try {
-    const { data } = await customFetch.get('/jobs/stats', {
-      headers: {
-        authorization: `Bearer ${thunkAPI.getState().user.user.token}`,
-      },
-    })
+    const { data } = await customFetch.get('/jobs/stats')
     // console.log(data)
     return data
   } catch (error) {
